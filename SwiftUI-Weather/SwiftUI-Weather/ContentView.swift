@@ -20,6 +20,16 @@ struct ContentView: View {
                     .font(.system(size: 32, weight: .medium))
                     .foregroundColor(.white)
                     .padding()
+                VStack(spacing: 10) {
+                    Image(systemName: "cloud.sun.fill")
+                        .renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 180, height: 180)
+                    Text("76°")
+                        .font(.system(size: 70, weight: .medium))
+                        .foregroundColor(.white)
+                }
                 Spacer()
             }
         }
