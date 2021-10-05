@@ -15,6 +15,13 @@ struct ContentView: View {
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
+            VStack {
+                Text("Cupertino, CA")
+                    .font(.system(size: 32, weight: .medium))
+                    .foregroundColor(.white)
+                    .padding()
+                Spacer()
+            }
         }
     }
 }
