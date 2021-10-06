@@ -47,6 +47,8 @@ struct ContentView: View {
                     WeatherButton(title: "Aktualisieren", textColor: .blue, backgroundColor: .white)
                 }
                 
+                Spacer()
+                
                 Button {
                     isNight.toggle()
                 } label: {
@@ -93,12 +95,39 @@ struct ContentView: View {
         var imageName = "questionmark"
         let icon = day["icon"] as! Int
         switch icon {
+            case 1: imageName = "sun.max.fill"
             case 2: imageName = "cloud.sun.fill"
             case 3: imageName = "cloud.sun.fill"
+            case 4: imageName = "cloud.fill"
+            case 5: imageName = "cloud.fog.fill"
+            case 6: imageName = "cloud.fog.fill"
             case 7: imageName = "cloud.drizzle.fill"
+            case 8: imageName = "cloud.rain.fill"
+            case 9: imageName = "cloud.heavyrain.fill"
+            case 10: imageName = "cloud.drizzle.fill"
+            case 11: imageName = "cloud.heavyrain.fill"
+            case 12: imageName = "cloud.sleet.fill"
+            case 13: imageName = "cloud.sleet.fill"
+            case 14: imageName = "cloud.snow.fill"
+            case 15: imageName = "cloud.snow.fill"
+            case 16: imageName = "cloud.snow.fill"
+            case 17: imageName = "cloud.hail.fill"
+            case 18: imageName = "cloud.sun.rain.fill"
             case 19: imageName = "cloud.sun.rain.fill"
-        default:
-            imageName = "questionmark"
+            case 20: imageName = "cloud.sun.rain.fill"
+            case 21: imageName = "cloud.sun.rain.fill"
+            case 22: imageName = "cloud.sun.rain.fill"
+            case 23: imageName = "cloud.sun.rain.fill"
+            case 24: imageName = "cloud.sun.rain.fill"
+            case 25: imageName = "cloud.sun.rain.fill"
+            case 26: imageName = "cloud.bolt.fill"
+            case 27: imageName = "cloud.bolt.rain.fill"
+            case 28: imageName = "cloud.bolt.rain.fill"
+            case 29: imageName = "cloud.bolt.rain.fill"
+            case 30: imageName = "cloud.bolt.rain.fill"
+            case 31: imageName = "wind"
+            default:
+                imageName = "questionmark"
         }
         print(icon)
         
