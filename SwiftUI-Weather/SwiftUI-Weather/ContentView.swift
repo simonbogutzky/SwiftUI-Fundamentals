@@ -6,47 +6,116 @@
 //
 
 import SwiftUI
+import Combine
 
-struct WeatherDayModel: Hashable {
+struct WeatherDayModel: Hashable, Codable {
     var day: String
     var imageName: String
-    var temperature: Int
+    var minTemperature: Int
+    var maxTemperature: Int
 }
 
 struct ContentView: View {
     
     @State private var isNight = false
-    private var weatherDayModels = [
-        WeatherDayModel(day: "Tue", imageName: "cloud.sun.fill", temperature: 74),
-        WeatherDayModel(day: "Wed", imageName: "sun.max.fill", temperature: 88),
-        WeatherDayModel(day: "Thu", imageName: "wind.snow", temperature: 55),
-        WeatherDayModel(day: "Fri", imageName: "sunset.fill", temperature: 60),
-        WeatherDayModel(day: "Sat", imageName: "snow", temperature: 25)
-    ]
+    @State private var weatherDayModels: [WeatherDayModel] = []
+    @State var cancellables = Set<AnyCancellable>()
+    let publisher: AnyPublisher<[WeatherDayModel], Never> = fetchURL(URL(string: "https://dwd.api.proxy.bund.dev/v30/stationOverviewExtended?stationIds=E652")!)
+        .share()
+        .eraseToAnyPublisher()
     
     var body: some View {
         ZStack {
             BackgroundView(isNight: isNight)
             VStack {
-                CityNameView(cityName: "Cupertino, CA")
-                DayWeatherView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill", temperature: 76)
+                CityNameView(cityName: "Nienburg (Weser)")
+                if(weatherDayModels.count > 0) {
+                    DayWeatherView(isNight: isNight, weatherDayModel: weatherDayModels[0])
+                }
                 HStack(spacing: 20) {
-                    ForEach(weatherDayModels, id: \.self) { weatherDayModel in
-                        WeatherDayView(weatherDayModel: weatherDayModel)
+                    if(weatherDayModels.count > 4) {
+                        ForEach(0...4, id: \.self) { index in
+                            WeatherDayView(weatherDayModel: weatherDayModels[index])
+                        }
                     }
                 }
                 Spacer()
                 
                 Button {
+                    fetchWeatherData()
+                } label: {
+                    WeatherButton(title: "Aktualisieren", textColor: .blue, backgroundColor: .white)
+                }
+                
+                Button {
                     isNight.toggle()
                 } label: {
-                    WeatherButton(title: "Change Day Time", textColor: .blue, backgroundColor: .white)
+                    WeatherButton(title: "Tageszeit ändern", textColor: .blue, backgroundColor: .white)
                 }
+                
                 
                 Spacer()
             }
+        }.onAppear {
+            fetchWeatherData()
         }
     }
+    
+    func fetchWeatherData() {
+        publisher
+            .sink(receiveCompletion: { completion in
+                print(completion)
+            }, receiveValue: { (models: [WeatherDayModel]) in
+                weatherDayModels = models
+            })
+            .store(in: &cancellables)
+    }
+    
+    static func fetchURL(_ url: URL) -> AnyPublisher<[WeatherDayModel], Never> {
+        URLSession.shared.dataTaskPublisher(for: url)
+            .assertNoFailure("this shouldn't have happened")
+            .flatMap({ result -> AnyPublisher<[WeatherDayModel], Never> in
+                guard let urlResponse = result.response as? HTTPURLResponse, (200...299).contains(urlResponse.statusCode) else {
+                    fatalError("We'll handle this later")
+                }
+                
+                let json = try? JSONSerialization.jsonObject(with: result.data, options: []) as? [String: Dictionary<String, Any>]
+                let days = json!["E652"]!["days"]! as! Array<Dictionary<String, Any>>
+                print(days)
+                return Just(days.map { day in
+                    dayToWeatherDayModel(day: day)
+                }).eraseToAnyPublisher()
+            }).eraseToAnyPublisher()
+    }
+    
+    static func dayToWeatherDayModel(day: Dictionary<String, Any>) -> WeatherDayModel {
+        
+        var imageName = "questionmark"
+        let icon = day["icon"] as! Int
+        switch icon {
+            case 2: imageName = "cloud.sun.fill"
+            case 3: imageName = "cloud.sun.fill"
+            case 7: imageName = "cloud.drizzle.fill"
+            case 19: imageName = "cloud.sun.rain.fill"
+        default:
+            imageName = "questionmark"
+        }
+        print(icon)
+        
+        let minTemperature = Int(round(day["temperatureMin"] as! Double / 10.0))
+        let maxTemperature = Int(round(day["temperatureMax"] as! Double / 10.0))
+        
+        
+        let jsonDate = day["dayDate"] as! String
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: jsonDate)
+        let weekday = Calendar.current.component(.weekday, from: date!)
+        let weekdays = ["So.", "Mo.", "Di.", "Mi.", "Do.", "Fr.", "Sa."]
+        
+        return WeatherDayModel(day: weekdays[weekday - 1], imageName: imageName, minTemperature: minTemperature, maxTemperature: maxTemperature)
+    }
+        
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -78,8 +147,8 @@ struct WeatherDayView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 40, height: 40)
             }
-            Text("\(weatherDayModel.temperature)°")
-                .font(.system(size: 28, weight: .medium))
+            Text("\(weatherDayModel.minTemperature)° | \(weatherDayModel.maxTemperature)°")
+                .font(.system(size: 12, weight: .medium))
                 .foregroundColor(.white)
         }
     }
@@ -109,25 +178,25 @@ struct CityNameView: View {
 }
 
 struct DayWeatherView: View {
-    var imageName: String
-    var temperature: Int
+    var isNight: Bool
+    var weatherDayModel: WeatherDayModel
     
     var body: some View {
         VStack(spacing: 10) {
             if #available(iOS 15.0, *) {
-                Image(systemName: imageName)
+                Image(systemName: isNight ? "moon.stars.fill" : weatherDayModel.imageName)
                     .symbolRenderingMode(.multicolor)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 180, height: 180)
             } else {
-                Image(systemName: imageName)
+                Image(systemName: isNight ? "moon.stars.fill" : weatherDayModel.imageName)
                     .renderingMode(.original)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 180, height: 180)
             }
-            Text("\(temperature)°")
+            Text("\(weatherDayModel.minTemperature)° | \(weatherDayModel.maxTemperature)°")
                 .font(.system(size: 70, weight: .medium))
                 .foregroundColor(.white)
         }.padding(.bottom, 40)
