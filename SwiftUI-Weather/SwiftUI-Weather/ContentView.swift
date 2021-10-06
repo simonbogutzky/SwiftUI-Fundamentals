@@ -7,9 +7,22 @@
 
 import SwiftUI
 
+struct WeatherDayModel: Hashable {
+    var day: String
+    var imageName: String
+    var temperature: Int
+}
+
 struct ContentView: View {
     
     @State private var isNight = false
+    private var weatherDayModels = [
+        WeatherDayModel(day: "Tue", imageName: "cloud.sun.fill", temperature: 74),
+        WeatherDayModel(day: "Wed", imageName: "sun.max.fill", temperature: 88),
+        WeatherDayModel(day: "Thu", imageName: "wind.snow", temperature: 55),
+        WeatherDayModel(day: "Fri", imageName: "sunset.fill", temperature: 60),
+        WeatherDayModel(day: "Sat", imageName: "snow", temperature: 25)
+    ]
     
     var body: some View {
         ZStack {
@@ -18,26 +31,9 @@ struct ContentView: View {
                 CityNameView(cityName: "Cupertino, CA")
                 DayWeatherView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill", temperature: 76)
                 HStack(spacing: 20) {
-                    WeatherDayView(
-                        weekOfDay: "Tue",
-                        imageName: "cloud.sun.fill",
-                        temperature: 74)
-                    WeatherDayView(
-                        weekOfDay: "Wed",
-                        imageName: "sun.max.fill",
-                        temperature: 88)
-                    WeatherDayView(
-                        weekOfDay: "Thu",
-                        imageName: "wind.snow",
-                        temperature: 55)
-                    WeatherDayView(
-                        weekOfDay: "Fri",
-                        imageName: "sunset.fill",
-                        temperature: 60)
-                    WeatherDayView(
-                        weekOfDay: "Sat",
-                        imageName: "snow",
-                        temperature: 25)
+                    ForEach(weatherDayModels, id: \.self) { weatherDayModel in
+                        WeatherDayView(weatherDayModel: weatherDayModel)
+                    }
                 }
                 Spacer()
                 
@@ -61,30 +57,28 @@ struct ContentView_Previews: PreviewProvider {
 
 struct WeatherDayView: View {
     
-    var weekOfDay: String
-    var imageName: String
-    var temperature: Int
+    var weatherDayModel: WeatherDayModel
     
     var body: some View {
         VStack(spacing: 8) {
-            Text(weekOfDay)
+            Text(weatherDayModel.day)
                 .font(.system(size: 16, weight: .medium))
                 .textCase(.uppercase)
                 .foregroundColor(.white)
             if #available(iOS 15.0, *) {
-                Image(systemName: imageName)
+                Image(systemName: weatherDayModel.imageName)
                     .symbolRenderingMode(.multicolor)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 40, height: 40)
             } else {
-                Image(systemName: imageName)
+                Image(systemName: weatherDayModel.imageName)
                     .renderingMode(.original)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 40, height: 40)
             }
-            Text("\(temperature)°")
+            Text("\(weatherDayModel.temperature)°")
                 .font(.system(size: 28, weight: .medium))
                 .foregroundColor(.white)
         }
