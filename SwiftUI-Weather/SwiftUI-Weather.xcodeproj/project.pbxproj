@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D3064394270B42E900F4B36A /* SwiftUI-Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3064394270B42E900F4B36A /* Nienbug (Weser).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nienbug (Weser).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3064397270B42E900F4B36A /* SwiftUI_WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_WeatherApp.swift; sourceTree = "<group>"; };
 		D3064399270B42E900F4B36A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D306439B270B42ED00F4B36A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		D3064395270B42E900F4B36A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D3064394270B42E900F4B36A /* SwiftUI-Weather.app */,
+				D3064394270B42E900F4B36A /* Nienbug (Weser).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 			);
 			name = "SwiftUI-Weather";
 			productName = "SwiftUI-Weather";
-			productReference = D3064394270B42E900F4B36A /* SwiftUI-Weather.app */;
+			productReference = D3064394270B42E900F4B36A /* Nienbug (Weser).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -288,7 +288,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.simonbogutzky.SwiftUI-Weather";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Nienbug (Weser)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -318,7 +318,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.simonbogutzky.SwiftUI-Weather";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Nienbug (Weser)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
