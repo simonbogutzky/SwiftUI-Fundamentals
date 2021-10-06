@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            BackgroundView(isNight: $isNight)
+            BackgroundView(isNight: isNight)
             VStack {
                 CityNameView(cityName: "Cupertino, CA")
                 DayWeatherView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill", temperature: 76)
@@ -71,10 +71,19 @@ struct WeatherDayView: View {
                 .font(.system(size: 16, weight: .medium))
                 .textCase(.uppercase)
                 .foregroundColor(.white)
-            Image(systemName: imageName)
-                .renderingMode(.original).resizable()
-                .aspectRatio( contentMode: .fit)
-                .frame(width: 40, height: 40)
+            if #available(iOS 15.0, *) {
+                Image(systemName: imageName)
+                    .symbolRenderingMode(.multicolor)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 40, height: 40)
+            } else {
+                Image(systemName: imageName)
+                    .renderingMode(.original)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 40, height: 40)
+            }
             Text("\(temperature)°")
                 .font(.system(size: 28, weight: .medium))
                 .foregroundColor(.white)
@@ -83,14 +92,14 @@ struct WeatherDayView: View {
 }
 
 struct BackgroundView: View {
-    @Binding var isNight: Bool
+    var isNight: Bool
     
     var body: some View {
         LinearGradient(
             gradient: Gradient(colors: [isNight ? .black : .blue, isNight ? .gray : Color("lightBlue")]),
             startPoint: .topLeading,
             endPoint: .bottomTrailing)
-            .edgesIgnoringSafeArea(.all)
+            .ignoresSafeArea()
     }
 }
 
@@ -111,11 +120,19 @@ struct DayWeatherView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            Image(systemName: imageName)
-                .renderingMode(.original)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 180, height: 180)
+            if #available(iOS 15.0, *) {
+                Image(systemName: imageName)
+                    .symbolRenderingMode(.multicolor)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 180, height: 180)
+            } else {
+                Image(systemName: imageName)
+                    .renderingMode(.original)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 180, height: 180)
+            }
             Text("\(temperature)°")
                 .font(.system(size: 70, weight: .medium))
                 .foregroundColor(.white)
