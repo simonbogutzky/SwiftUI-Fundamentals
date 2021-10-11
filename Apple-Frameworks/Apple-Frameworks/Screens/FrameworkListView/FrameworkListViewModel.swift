@@ -1,5 +1,5 @@
 //
-//  FrameworkGridViewModel.swift
+//  FrameworkListViewModel.swift
 //  Apple-Frameworks
 //
 //  Created by Simon Bogutzky on 11.10.21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class FrameworkGridViewModel: ObservableObject {
+final class FrameworkListViewModel: ObservableObject {
     var selectedFramework: Framework? {
         didSet { isShowingDetailView = true }
     }
