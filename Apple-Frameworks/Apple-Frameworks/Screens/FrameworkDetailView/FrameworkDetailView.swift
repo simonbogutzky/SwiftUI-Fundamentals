@@ -28,8 +28,14 @@ struct FrameworkDetailView: View {
                 Button {
                     isShowingSafariView = true
                 } label: {
-                    AFButton(title: "Learn More")
+                    Label("Learn More", systemImage: "book.fill")
+                    //AFButton(title: "Learn More")
                 }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                //.foregroundColor(.blue)
+                //.buttonBorderShape(.roundedRectangle(radius: 10))
+                .tint(.red)
                 .padding()
                 
             }
