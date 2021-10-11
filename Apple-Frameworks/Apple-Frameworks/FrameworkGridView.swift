@@ -8,34 +8,39 @@
 import SwiftUI
 
 struct FrameworkGridView: View {
+    
+    let coloums: [GridItem] = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+    ]
+    
     var body: some View {
-        HStack {
-            
-            VStack {
-                Image("app-clip")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .scaledToFit()
-                Text("App Clip")
-                    .lineLimit(1)
-            }
-            
-            VStack {
-                Image("arkit")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .scaledToFit()
-                Text("ARKit")
-            }
-            
-            VStack {
-                Image("carplay")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .scaledToFit()
-                Text("Carplay")
-                    .lineLimit(1)
-            }
+        LazyVGrid(columns: coloums) {
+            FrameworkTitleView(
+                name: "App Clip",
+                imageName: "app-clip"
+            )
+            FrameworkTitleView(
+                name: "App Clip",
+                imageName: "app-clip"
+            )
+            FrameworkTitleView(
+                name: "App Clip",
+                imageName: "app-clip"
+            )
+            FrameworkTitleView(
+                name: "App Clip",
+                imageName: "app-clip"
+            )
+            FrameworkTitleView(
+                name: "App Clip",
+                imageName: "app-clip"
+            )
+            FrameworkTitleView(
+                name: "App Clip",
+                imageName: "app-clip"
+            )
         }
     }
 }
@@ -43,5 +48,23 @@ struct FrameworkGridView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         FrameworkGridView()
+    }
+}
+
+struct FrameworkTitleView: View {
+    let name: String
+    let imageName: String
+    
+    var body: some View {
+        VStack {
+            Image(imageName)
+                .resizable()
+                .frame(width: 90, height: 90)
+            Text(name)
+                .font(.title2)
+                .fontWeight(.semibold)
+                .scaledToFit()
+                .minimumScaleFactor(0.6)
+        }
     }
 }
