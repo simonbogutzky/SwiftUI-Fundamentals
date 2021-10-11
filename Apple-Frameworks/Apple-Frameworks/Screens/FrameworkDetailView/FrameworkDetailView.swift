@@ -20,17 +20,24 @@ struct FrameworkDetailView: View {
             
             FrameworkTitleView(framework: framework)
             
-            Text(framework.description)
-                .font(.body)
+            VStack {
+                Text(framework.description)
+                    .font(.body)
+                    .padding()
+                
+                Button {
+                    isShowingSafariView = true
+                } label: {
+                    AFButton(title: "Learn More")
+                }
                 .padding()
+                
+            }
+            .background(Color(UIColor.secondaryLabel))
+            .cornerRadius(10)
+            .padding()
             
             Spacer()
-            
-            Button {
-                isShowingSafariView = true
-            } label: {
-                AFButton(title: "Learn More")
-            }
         }
         .fullScreenCover(isPresented: $isShowingSafariView) {
             SafariView(url: (URL(string: framework.urlString) ?? URL(string: "https://www.apple.com"))!)
