@@ -11,6 +11,7 @@
 		D33E177F2715917800862025 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E177E2715917800862025 /* BarcodeScannerView.swift */; };
 		D33E17812715917C00862025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33E17802715917C00862025 /* Assets.xcassets */; };
 		D33E17842715917C00862025 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33E17832715917C00862025 /* Preview Assets.xcassets */; };
+		D375C2072718615500512C11 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375C2062718615500512C11 /* ScannerView.swift */; };
 		D37A09DE2715CA5500CF9D9E /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37A09DD2715CA5500CF9D9E /* ScannerVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +21,7 @@
 		D33E177E2715917800862025 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
 		D33E17802715917C00862025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D33E17832715917C00862025 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D375C2062718615500512C11 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		D37A09DD2715CA5500CF9D9E /* ScannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +60,7 @@
 				D37A09DD2715CA5500CF9D9E /* ScannerVC.swift */,
 				D33E17802715917C00862025 /* Assets.xcassets */,
 				D33E17822715917C00862025 /* Preview Content */,
+				D375C2062718615500512C11 /* ScannerView.swift */,
 			);
 			path = BarcodeScanner;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D37A09DE2715CA5500CF9D9E /* ScannerVC.swift in Sources */,
+				D375C2072718615500512C11 /* ScannerView.swift in Sources */,
 				D33E177F2715917800862025 /* BarcodeScannerView.swift in Sources */,
 				D33E177D2715917800862025 /* BarcodeScannerApp.swift in Sources */,
 			);
