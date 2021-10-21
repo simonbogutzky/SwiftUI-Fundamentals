@@ -19,6 +19,7 @@
 		D38C2424271983B800541911 /* AppetizerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C2423271983B800541911 /* AppetizerListView.swift */; };
 		D38C2426271983C800541911 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C2425271983C800541911 /* AccountView.swift */; };
 		D38C2428271983D600541911 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C2427271983D600541911 /* OrderView.swift */; };
+		D3E5514B27219DB100BB264C /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5514A27219DB100BB264C /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		D38C2423271983B800541911 /* AppetizerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListView.swift; sourceTree = "<group>"; };
 		D38C2425271983C800541911 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		D38C2427271983D600541911 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		D3E5514A27219DB100BB264C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				D312EF662720586C008343A0 /* Appetizer.swift */,
 				D3614AF72721655200B14408 /* AppetizerListCell.swift */,
 				D3614AF9272167DE00B14408 /* NetworkManager.swift */,
+				D3E5514A27219DB100BB264C /* Alert.swift */,
 			);
 			path = Appertizers;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				D38C24182719831700541911 /* AppetizerTabView.swift in Sources */,
 				D3614AFA272167DE00B14408 /* NetworkManager.swift in Sources */,
 				D38C24162719831700541911 /* AppertizersApp.swift in Sources */,
+				D3E5514B27219DB100BB264C /* Alert.swift in Sources */,
 				D38C2424271983B800541911 /* AppetizerListView.swift in Sources */,
 				D38C2428271983D600541911 /* OrderView.swift in Sources */,
 			);
