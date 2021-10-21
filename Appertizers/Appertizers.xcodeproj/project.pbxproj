@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D312EF672720586C008343A0 /* Appetizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312EF662720586C008343A0 /* Appetizer.swift */; };
+		D3614AF82721655200B14408 /* AppetizerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3614AF72721655200B14408 /* AppetizerListCell.swift */; };
 		D38C24162719831700541911 /* AppertizersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C24152719831700541911 /* AppertizersApp.swift */; };
 		D38C24182719831700541911 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C24172719831700541911 /* AppetizerTabView.swift */; };
 		D38C241A2719831B00541911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D38C24192719831B00541911 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		D312EF662720586C008343A0 /* Appetizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizer.swift; sourceTree = "<group>"; };
+		D3614AF72721655200B14408 /* AppetizerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListCell.swift; sourceTree = "<group>"; };
 		D38C24122719831700541911 /* Appertizers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appertizers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38C24152719831700541911 /* AppertizersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppertizersApp.swift; sourceTree = "<group>"; };
 		D38C24172719831700541911 /* AppetizerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerTabView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				D38C24192719831B00541911 /* Assets.xcassets */,
 				D38C241B2719831B00541911 /* Preview Content */,
 				D312EF662720586C008343A0 /* Appetizer.swift */,
+				D3614AF72721655200B14408 /* AppetizerListCell.swift */,
 			);
 			path = Appertizers;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D312EF672720586C008343A0 /* Appetizer.swift in Sources */,
+				D3614AF82721655200B14408 /* AppetizerListCell.swift in Sources */,
 				D38C2426271983C800541911 /* AccountView.swift in Sources */,
 				D38C24182719831700541911 /* AppetizerTabView.swift in Sources */,
 				D38C24162719831700541911 /* AppertizersApp.swift in Sources */,
