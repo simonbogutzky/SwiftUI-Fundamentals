@@ -1,5 +1,5 @@
 //
-//  OrderButton.swift
+//  APButton.swift
 //  Appertizers
 //
 //  Created by Simon Bogutzky on 21.10.21.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct OrderButton: View {
-    var title: String
+struct APButton: View {
+    var title: LocalizedStringKey
     var textColor = Color.white
     var backgroundColor = Color.brandPrimary
     var body: some View {
