@@ -13,6 +13,8 @@
 		D3614AFC2721692700B14408 /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3614AFB2721692700B14408 /* APError.swift */; };
 		D3614AFE2721726000B14408 /* AppetizerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3614AFD2721726000B14408 /* AppetizerListViewModel.swift */; };
 		D365D38D2722C0E000DA4DA9 /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365D38C2722C0E000DA4DA9 /* XDismissButton.swift */; };
+		D365D38F2722C77B00DA4DA9 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365D38E2722C77B00DA4DA9 /* AccountViewModel.swift */; };
+		D365D3912722C8D800DA4DA9 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365D3902722C8D800DA4DA9 /* String+Ext.swift */; };
 		D38C24162719831700541911 /* AppertizersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C24152719831700541911 /* AppertizersApp.swift */; };
 		D38C24182719831700541911 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C24172719831700541911 /* AppetizerTabView.swift */; };
 		D38C241A2719831B00541911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D38C24192719831B00541911 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		D3614AFB2721692700B14408 /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
 		D3614AFD2721726000B14408 /* AppetizerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListViewModel.swift; sourceTree = "<group>"; };
 		D365D38C2722C0E000DA4DA9 /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		D365D38E2722C77B00DA4DA9 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		D365D3902722C8D800DA4DA9 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		D38C24122719831700541911 /* Appertizers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appertizers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38C24152719831700541911 /* AppertizersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppertizersApp.swift; sourceTree = "<group>"; };
 		D38C24172719831700541911 /* AppetizerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerTabView.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				D38C2425271983C800541911 /* AccountView.swift */,
+				D365D38E2722C77B00DA4DA9 /* AccountViewModel.swift */,
 			);
 			path = AccountView;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 		D3E551582721B18500BB264C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D365D3902722C8D800DA4DA9 /* String+Ext.swift */,
 				D3E5514E2721A5C600BB264C /* Color+Ext.swift */,
 			);
 			path = Extensions;
@@ -298,6 +304,7 @@
 				D3614AFC2721692700B14408 /* APError.swift in Sources */,
 				D365D38D2722C0E000DA4DA9 /* XDismissButton.swift in Sources */,
 				D3614AF82721655200B14408 /* AppetizerListCell.swift in Sources */,
+				D365D38F2722C77B00DA4DA9 /* AccountViewModel.swift in Sources */,
 				D3614AFE2721726000B14408 /* AppetizerListViewModel.swift in Sources */,
 				D3E551642721B50600BB264C /* APButton.swift in Sources */,
 				D3E5514F2721A5C600BB264C /* Color+Ext.swift in Sources */,
@@ -306,6 +313,7 @@
 				D38C24182719831700541911 /* AppetizerTabView.swift in Sources */,
 				D3614AFA272167DE00B14408 /* NetworkManager.swift in Sources */,
 				D3E551512721AEB800BB264C /* RemoteImage.swift in Sources */,
+				D365D3912722C8D800DA4DA9 /* String+Ext.swift in Sources */,
 				D3E551612721B2CD00BB264C /* AppetizerDetailView.swift in Sources */,
 				D38C24162719831700541911 /* AppertizersApp.swift in Sources */,
 				D3E5514B27219DB100BB264C /* Alert.swift in Sources */,
