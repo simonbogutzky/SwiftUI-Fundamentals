@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D304ED812722E4B80049F225 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED802722E4B80049F225 /* User.swift */; };
 		D304ED842722EE720049F225 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED832722EE720049F225 /* EmptyState.swift */; };
+		D304ED862722F1480049F225 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED852722F1480049F225 /* Order.swift */; };
 		D312EF672720586C008343A0 /* Appetizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312EF662720586C008343A0 /* Appetizer.swift */; };
 		D3614AF82721655200B14408 /* AppetizerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3614AF72721655200B14408 /* AppetizerListCell.swift */; };
 		D3614AFA272167DE00B14408 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3614AF9272167DE00B14408 /* NetworkManager.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		D304ED802722E4B80049F225 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D304ED832722EE720049F225 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
+		D304ED852722F1480049F225 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		D312EF662720586C008343A0 /* Appetizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizer.swift; sourceTree = "<group>"; };
 		D3614AF72721655200B14408 /* AppetizerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListCell.swift; sourceTree = "<group>"; };
 		D3614AF9272167DE00B14408 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				D312EF662720586C008343A0 /* Appetizer.swift */,
 				D304ED802722E4B80049F225 /* User.swift */,
+				D304ED852722F1480049F225 /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				D3614AFC2721692700B14408 /* APError.swift in Sources */,
 				D365D38D2722C0E000DA4DA9 /* XDismissButton.swift in Sources */,
 				D3614AF82721655200B14408 /* AppetizerListCell.swift in Sources */,
+				D304ED862722F1480049F225 /* Order.swift in Sources */,
 				D365D38F2722C77B00DA4DA9 /* AccountViewModel.swift in Sources */,
 				D3614AFE2721726000B14408 /* AppetizerListViewModel.swift in Sources */,
 				D3E551642721B50600BB264C /* APButton.swift in Sources */,
