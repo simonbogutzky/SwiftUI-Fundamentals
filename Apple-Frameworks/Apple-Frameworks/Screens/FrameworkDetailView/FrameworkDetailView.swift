@@ -8,35 +8,45 @@
 import SwiftUI
 
 struct FrameworkDetailView: View {
-    
-    var framework: Framework
-    @Binding var isShowingDetailView: Bool
-    @State var isShowingSafariView = false
+
+    @ObservedObject var viewModel: FrameworkDetailViewModel
     
     var body: some View {
         VStack {
             
             Spacer()
             
-            FrameworkTitleView(framework: framework)
+            FrameworkTitleView(framework: viewModel.framework)
             
             VStack {
-                Text(framework.description)
+                Text(viewModel.framework.description)
                     .font(.body)
                     .padding()
                 
-                Button {
-                    isShowingSafariView = true
-                } label: {
+                Spacer()
+                
+                Link(destination: URL(string: viewModel.framework.urlString) ?? URL(string: "https://www.apple.com")!) {
                     Label("Learn More", systemImage: "book.fill")
-                    //AFButton(title: "Learn More")
                 }
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                //.foregroundColor(.blue)
-                //.buttonBorderShape(.roundedRectangle(radius: 10))
+                .foregroundColor(.blue)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 .tint(.red)
                 .padding()
+                
+//                Button {
+//                    viewModel.isShowingSafariView = true
+//                } label: {
+//                    Label("Learn More", systemImage: "book.fill")
+//                    //AFButton(title: "Learn More")
+//                }
+//                .buttonStyle(.borderedProminent)
+//                .controlSize(.large)
+//                //.foregroundColor(.blue)
+//                //.buttonBorderShape(.roundedRectangle(radius: 10))
+//                .tint(.red)
+//                .padding()
                 
             }
             .background(Color(UIColor.secondaryLabel))
@@ -45,15 +55,15 @@ struct FrameworkDetailView: View {
             
             Spacer()
         }
-        .fullScreenCover(isPresented: $isShowingSafariView) {
-            SafariView(url: (URL(string: framework.urlString) ?? URL(string: "https://www.apple.com"))!)
-        }
+//        .fullScreenCover(isPresented: $viewModel.isShowingSafariView) {
+//            SafariView(url: (URL(string: viewModel.framework.urlString) ?? URL(string: "https://www.apple.com"))!)
+//        }
     }
 }
 
 struct FrameworkDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FrameworkDetailView(framework: MockData.sampleFramework, isShowingDetailView: .constant(false))
+        FrameworkDetailView(viewModel: FrameworkDetailViewModel(framework: MockData.sampleFramework, isShowingDetailView: .constant(false)))
             .preferredColorScheme(.dark)
     }
 }
