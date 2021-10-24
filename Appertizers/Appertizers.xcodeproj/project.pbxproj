@@ -12,6 +12,7 @@
 		D304ED862722F1480049F225 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304ED852722F1480049F225 /* Order.swift */; };
 		D312EF672720586C008343A0 /* Appetizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D312EF662720586C008343A0 /* Appetizer.swift */; };
 		D3260E80272542150012A33A /* CostumModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3260E7F272542150012A33A /* CostumModifiers.swift */; };
+		D3260E8427257A5B0012A33A /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3260E8327257A5B0012A33A /* Date+Ext.swift */; };
 		D3614AF82721655200B14408 /* AppetizerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3614AF72721655200B14408 /* AppetizerListCell.swift */; };
 		D3614AFA272167DE00B14408 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3614AF9272167DE00B14408 /* NetworkManager.swift */; };
 		D3614AFC2721692700B14408 /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3614AFB2721692700B14408 /* APError.swift */; };
@@ -39,6 +40,7 @@
 		D304ED852722F1480049F225 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		D312EF662720586C008343A0 /* Appetizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizer.swift; sourceTree = "<group>"; };
 		D3260E7F272542150012A33A /* CostumModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumModifiers.swift; sourceTree = "<group>"; };
+		D3260E8327257A5B0012A33A /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		D3614AF72721655200B14408 /* AppetizerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListCell.swift; sourceTree = "<group>"; };
 		D3614AF9272167DE00B14408 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D3614AFB2721692700B14408 /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			children = (
 				D365D3902722C8D800DA4DA9 /* String+Ext.swift */,
 				D3E5514E2721A5C600BB264C /* Color+Ext.swift */,
+				D3260E8327257A5B0012A33A /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				D3614AFC2721692700B14408 /* APError.swift in Sources */,
 				D365D38D2722C0E000DA4DA9 /* XDismissButton.swift in Sources */,
 				D3614AF82721655200B14408 /* AppetizerListCell.swift in Sources */,
+				D3260E8427257A5B0012A33A /* Date+Ext.swift in Sources */,
 				D304ED862722F1480049F225 /* Order.swift in Sources */,
 				D365D38F2722C77B00DA4DA9 /* AccountViewModel.swift in Sources */,
 				D3614AFE2721726000B14408 /* AppetizerListViewModel.swift in Sources */,
