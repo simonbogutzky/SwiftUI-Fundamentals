@@ -16,6 +16,16 @@ struct AppetizerListCell: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 120, height: 90)
                 .cornerRadius(8)
+            /*
+            AsyncImage(url: URL(string: appetizer.imageURL)) { image in
+                image
+                    .resizable()
+                    .modifier(ListImageStyle())
+            } placeholder: {
+                Image("food-placeholder")
+                    .resizable()
+                    .modifier(ListImageStyle())
+            } */
             
             VStack(alignment: .leading, spacing: 5) {
                 Text(appetizer.name)
